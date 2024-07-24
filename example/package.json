@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@local/lib": "file:../lib",
+    "@ptolemy2002/react-mount-effects": "file:../lib",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "ajv": "^8.17.1",
@@ -37,5 +37,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }
