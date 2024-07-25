@@ -19,6 +19,11 @@
         "release-minor": "bash ./scripts/release.sh minor",
         "release-major": "bash ./scripts/release.sh major"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Ptolemy2002/react-mount-effects",
+        "directory": "lib"
+    },
     "description": "Example of a React library",
     "license": "ISC",
     "peerDependencies": {
