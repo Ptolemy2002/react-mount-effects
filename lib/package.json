@@ -24,7 +24,7 @@
         "url": "https://github.com/Ptolemy2002/react-mount-effects",
         "directory": "lib"
     },
-    "description": "Example of a React library",
+    "description": "Dedicated effect functions for React component mount and unmount",
     "license": "ISC",
     "peerDependencies": {
         "@types/react": "^18.3.3",
