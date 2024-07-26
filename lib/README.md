@@ -1,4 +1,4 @@
-# React Library CRA Template
+# React Mount Effects
 React allows `useEffect(() => {callback()}, [])` to run the callback only on first mount, thus `useEffect(() => callback, [])` only runs on unmounting. However, eslint often complains about this. This library manually suppresses those warnings and exports the hooks for convenience sake.
 
 The hooks are not exported as default, so you can import in one of the following ways:
