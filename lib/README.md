@@ -4,12 +4,47 @@ React allows `useEffect(() => {callback()}, [])` to run the callback only on fir
 The hooks are not exported as default, so you can import in one of the following ways:
 ```
 //ES6
-import { useMountEffect, useUnmountEffect } from '@ptolemy2002/react-mount-effects';
+import { useMountEffect, useUnmountEffect, useDelayedEffect } from '@ptolemy2002/react-mount-effects';
 //CommonJS
-const { useMountEffect, useUnmountEffect } = require('@ptolemy2002/react-mount-effects');
+const { useMountEffect, useUnmountEffect, useDelayedEffect } = require('@ptolemy2002/react-mount-effects');
 ```
 
-Both hooks take only one argument, the callback.
+The example for this library purposefully does not run in strict mode, as doing so allows more clear demonstration of exactly when each hook runs (console logs are run only once and there aren't any extraneous mounts/unmounts).
+
+## Hooks
+The following hooks are available in the library:
+
+### useMountEffect
+#### Description
+Runs the callback only on first mount. The return value of the callback is ignored.
+
+#### Parameters
+- `callback` (Function): The callback to run on first mount.
+
+#### Returns
+None
+
+### useUnmountEffect
+#### Description
+Runs the callback only on unmount. The return value of the callback is ignored.
+
+#### Parameters
+- `callback` (Function): The callback to run on unmount.
+
+#### Returns
+None
+
+### useDelayedEffect
+#### Description
+Runs the callback only after it has been triggered `delay + 1` times (since the first is on mount and does not represent a state change). The return value of the callback is ignored.
+
+#### Parameters
+- `callback` (Function): The callback to run after the delay. The first parameter is the number of times the effect has been triggered since either initialization or last reset, and the second argument is a function that allows you to reset the counter.
+- `deps` (Array): An array of dependencies to listen to. This works exactly like the `useEffect` hook's dependencies.
+- `delay` (Number): The number of times the dependencies must change before the callback is run. Default is `0`, meaning the callback is run on any change, but not on mount.
+
+#### Returns
+None
 
 ## Meta
 This is a React Library Created by Ptolemy2002's [cra-template-react-library](https://www.npmjs.com/package/@ptolemy2002/cra-template-react-library) template in combination with [create-react-app](https://www.npmjs.com/package/create-react-app). It contains methods of building and publishing your library to npm.
