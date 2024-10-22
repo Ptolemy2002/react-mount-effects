@@ -9,7 +9,7 @@ function App() {
     return (
         <div>
             {showA ? <A /> : <B />}
-            <button onClick={() => setShowA(!showA)}>Toggle</button>
+            <button onClick={() => setShowA((v) => !v)}>Toggle</button>
         </div>
     );
 }
