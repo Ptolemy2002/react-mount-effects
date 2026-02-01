@@ -36,10 +36,10 @@ None
 
 ### useDelayedEffect
 #### Description
-Runs the callback only after it has been triggered `delay + 1` times (since the first is on mount and does not represent a state change). The return value of the callback is ignored.
+Runs the callback only after it has been triggered `delay + 1` times (since the first is on mount and does not represent a state change). The return value of the callback is used as the cleanup function for the effect.
 
 #### Parameters
-- `callback` (`(changeCount: number, reset: () => void) => void`): The callback to run after the delay. The first parameter is the number of times the effect has been triggered since either initialization or last reset, and the second argument is a function that allows you to reset the counter.
+- `callback` (`changeCount: number, reset: () => void) => (() => void) | undefined`): The callback to run after the delay. The first parameter is the number of times the effect has been triggered since either initialization or last reset, and the second argument is a function that allows you to reset the counter.
 - `deps` (`react.DependencyList`): An array of dependencies to listen to. This works exactly like the `useEffect` hook's dependencies. By default, this is an empty array.
 - `delay` (`number`): The number of times the dependencies must change before the callback is run. Default is `0`, meaning the callback is run on any change, but not on mount.
 

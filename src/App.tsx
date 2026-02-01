@@ -3,7 +3,10 @@ import { useMountEffect, useUnmountEffect, useDelayedEffect } from "@ptolemy2002
 
 function App() {
     const [showA, setShowA] = useState(true);
-    useDelayedEffect(() => console.log("App Toggled (at least once)"), [showA]);
+    useDelayedEffect(() => {
+        console.log("App Toggled (at least once)")
+        return () => console.log("Cleanup after App Toggled");
+    }, [showA]);
     useDelayedEffect(() => console.log("App Toggled (more than once)"), [showA], 1);
 
     return (
